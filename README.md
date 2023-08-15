@@ -4,7 +4,7 @@
 > Generate your own repository, update this README and edit all files content while working on projects. You should not be adding any new files unless asked otherwise.
  -->
 
-## Getting Started
+# VET Clinic Database
 
 This repository includes files with plain SQL that can be used to recreate a database:
 
@@ -13,10 +13,6 @@ I will use a relational database to create the data structure for a vet clinic. 
 - animals' owners
 - clinic employees
 - visits
-
-- Use [schema.sql](./schema.sql) to create all tables.
-- Use [data.sql](./data.sql) to populate tables with sample data.
-- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
 
 <a name="readme-top"></a>
 
@@ -47,6 +43,7 @@ After you're finished please remove all the comments and instructions!
 
 # 📗 Table of Contents
 
+- [VET Clinic Database](#vet-clinic-database)
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 \[vet-clinic-database\] ](#-vet-clinic-database-)
   - [🛠 Built With ](#-built-with-)
@@ -58,7 +55,6 @@ After you're finished please remove all the comments and instructions!
     - [Install](#install)
     - [Usage](#usage)
     - [Run tests](#run-tests)
-    - [Deployment](#deployment)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -123,65 +119,39 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+- IDE (visual studio code, etc)
+- PostgreSQL
+- PgAdmin4
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
-
 ```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  cd vet-clinic-database
+  git git@github.com:fickryiman/vet-clinic-database.git
 ```
---->
 
 ### Install
 
 Install this project with:
 
-<!--
-Example command:
-
 ```sh
-  cd my-project
-  gem install
+  cd vet-clinic-database
+  npm install
 ```
---->
 
 ### Usage
 
-To run the project, execute the following command:
-
-<!--
-Example command:
-
-```sh
-  rails server
-```
---->
+- Use [schema.sql](./schema.sql) to create all tables.
+- Use [data.sql](./data.sql) to populate tables with sample data.
+- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
 
 ### Run tests
 
-To run tests, run the following command:
+To run tests, open your query tool or terminal.
 
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
-
-### Deployment
+<!-- ### Deployment
 
 You can deploy this project using:
 
@@ -191,7 +161,7 @@ Example:
 ```sh
 
 ```
- -->
+ --> -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
