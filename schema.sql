@@ -20,3 +20,7 @@ CREATE TABLE IF NOT EXISTS public.animals
     weight_kg numeric NOT NULL,
     CONSTRAINT animals_pkey PRIMARY KEY (id)
 )
+
+ALTER TABLE public.animals
+ADD COLUMN species text;
+
