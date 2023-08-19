@@ -116,3 +116,45 @@ UPDATE public.animals SET owner_id = '1003'::integer WHERE id = 8;
 UPDATE public.animals SET owner_id = '1003'::integer WHERE id = 11;
 UPDATE public.animals SET owner_id = '1004'::integer WHERE id = 9;
 UPDATE public.animals SET owner_id = '1004'::integer WHERE id = 10;
+
+
+CREATE TABLE IF NOT EXISTS public.vets
+(
+    id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    name text COLLATE pg_catalog."default",
+    age integer,
+    date_of_graduation date,
+    CONSTRAINT vets_pkey PRIMARY KEY (id)
+)
+
+CREATE TABLE IF NOT EXISTS public.specializations
+(
+    id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    species_id integer NOT NULL,
+    vet_id integer NOT NULL,
+    CONSTRAINT specializations_pkey PRIMARY KEY (id),
+    CONSTRAINT species_id FOREIGN KEY (species_id)
+        REFERENCES public.species (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT vet_id FOREIGN KEY (vet_id)
+        REFERENCES public.vets (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+CREATE TABLE IF NOT EXISTS public.visits
+(
+    id integer NOT NULL,
+    animal_id integer NOT NULL,
+    vet_id integer NOT NULL,
+    CONSTRAINT visits_pkey PRIMARY KEY (id),
+    CONSTRAINT animal_id FOREIGN KEY (animal_id)
+        REFERENCES public.animals (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT vet_id FOREIGN KEY (vet_id)
+        REFERENCES public.vets (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)

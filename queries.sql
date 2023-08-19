@@ -82,3 +82,92 @@ JOIN public.owners O ON A.owner_id = O.id
 GROUP BY O.full_name
 ORDER BY animal_count DESC
 LIMIT 1;
+
+
+SELECT V.animal_id, A.name, V.vet_id, VE.name, V.visit_date
+	FROM public.visits V
+	JOIN public.animals A
+	ON V.animal_id = A.id
+	JOIN public.vets VE
+	ON V.vet_id = VE.id
+	WHERE VE.name = 'William Tatcher'
+	ORDER BY visit_date DESC
+	LIMIT 1;
+
+SELECT COUNT(DISTINCT V.animal_id) AS different_animal_seen
+	FROM public.visits V
+	WHERE V.vet_id = 3;
+
+SELECT V.name, S.name AS specialization_name
+	FROM public.specializations SV
+	JOIN public.species S
+	ON SV.species_id = S.id
+	RIGHT JOIN public.vets V
+	ON SV.vet_id = V.id;
+
+SELECT A.name, VE.name, V.visit_date
+	FROM public.visits V
+	JOIN public.animals A
+	ON V.animal_id = A.id
+	JOIN public.vets VE
+	ON V.vet_id = VE.id
+	WHERE VE.name = 'Stephanie Mendez' AND (V.visit_date < '2020-08-30' AND V.visit_date > '2020-04-01');
+
+SELECT A.name, count(V.animal_id) AS visit_count
+	FROM public.animals A
+	JOIN public.visits V ON A.id = V.animal_id
+	GROUP BY A.name
+	ORDER BY visit_count DESC
+	LIMIT 1;
+
+SELECT A.name, V.visit_date
+	FROM public.visits V
+	JOIN public.animals A
+	ON V.animal_id = A.id
+	JOIN public.vets VE
+	ON V.vet_id = VE.id
+	WHERE VE.name = 'Maisy Smith'
+	ORDER BY visit_date ASC
+	LIMIT 1;
+
+SELECT A.name AS animal_name, A.date_of_birth, A.escape_attempts, A.neutered, A.weight_kg, VE.name AS vet_name, V.visit_date
+	FROM public.visits V
+	JOIN public.animals A
+	ON V.animal_id = A.id
+	JOIN public.vets VE
+	ON V.vet_id = VE.id
+	ORDER BY visit_date DESC
+	LIMIT 5;
+
+SELECT count(*) 
+	FROM public.visits V
+	JOIN public.animals A
+	ON V.animal_id = A.id
+	JOIN public.vets VE
+	ON V.vet_id = VE.id
+	LEFT JOIN specializations SP
+	ON VE.id = SP.vet_id AND A.species_id = SP.species_id
+	WHERE SP.vet_id IS NULL;
+
+SELECT S.name
+	FROM public.species S
+	JOIN public.animals A
+	ON S.id = A.species_id
+	JOIN public.visits V
+	ON A.id = V.animal_id
+	JOIN public.vets VE
+	ON V.vet_id = VE.id
+	WHERE VE.name = 'Maisy Smith'
+	GROUP BY S.name
+	ORDER BY count(V.visit_date) DESC
+	LIMIT 1;
+
+
+
+
+
+
+
+
+
+

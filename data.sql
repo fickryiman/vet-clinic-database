@@ -55,3 +55,89 @@ INSERT INTO public.animals (
 name, date_of_birth, escape_attempts, neutered, weight_kg) VALUES (
 'Ditto'::text, '2022-05-14'::date, '4'::integer, true::boolean, '22'::numeric)
  returning id;
+
+
+INSERT INTO public.vets (name, age, date_of_graduation) VALUES ('William Tatcher'::text, '45'::integer, '2000-04-23'::date)
+ returning id;
+
+INSERT INTO public.vets (name, age, date_of_graduation) VALUES ('Maisy Smith'::text, '26'::integer, '2019-01-17'::date)
+ returning id;
+
+INSERT INTO public.vets (name, age, date_of_graduation) VALUES ('Stephanie Mendez'::text, '64'::integer, '1981-05-04'::date)
+ returning id;
+
+INSERT INTO public.vets (name, age, date_of_graduation) VALUES ('Jack Harkness'::text, '38'::integer, '2008-06-08'::date)
+ returning id;
+
+
+INSERT INTO public.specializations (species_id, vet_id) VALUES ('1000001'::integer, '3'::integer)
+ returning id;
+
+INSERT INTO public.specializations (species_id, vet_id) VALUES ('1000001'::integer, '4'::integer)
+ returning id;
+
+INSERT INTO public.specializations (species_id, vet_id) VALUES ('1000000'::integer, '1'::integer)
+ returning id;
+
+INSERT INTO public.specializations (species_id, vet_id) VALUES ('1000000'::integer, '3'::integer)
+ returning id;
+
+INSERT INTO public.visits (animal_id, vet_id, visit_date) VALUES ('1'::integer, '1'::integer, '2020-05-24'::date)
+ returning id;
+
+INSERT INTO public.visits (animal_id, vet_id, visit_date) VALUES ('1'::integer, '3'::integer, '2020-07-22'::date)
+ returning id;
+
+INSERT INTO public.visits (animal_id, vet_id, visit_date) VALUES ('2'::integer, '4'::integer, '2021-02-02'::date)
+ returning id;
+
+INSERT INTO public.visits (animal_id, vet_id, visit_date) VALUES ('3'::integer, '2'::integer, '2020-01-05'::date)
+ returning id;
+
+INSERT INTO public.visits (animal_id, vet_id, visit_date) VALUES ('3'::integer, '2'::integer, '2020-03-08'::date)
+ returning id;
+
+INSERT INTO public.visits (animal_id, vet_id, visit_date) VALUES ('3'::integer, '2'::integer, '2020-05-14'::date)
+ returning id;
+
+INSERT INTO public.visits (animal_id, vet_id, visit_date) VALUES ('4'::integer, '3'::integer, '2021-05-04'::date)
+ returning id;
+
+INSERT INTO public.visits (animal_id, vet_id, visit_date) VALUES ('5'::integer, '4'::integer, '2021-02-24'::date)
+ returning id;
+
+INSERT INTO public.visits (animal_id, vet_id, visit_date) VALUES ('7'::integer, '2'::integer, '2019-12-21'::date)
+ returning id;
+
+INSERT INTO public.visits (animal_id, vet_id, visit_date) VALUES ('7'::integer, '1'::integer, '2020-08-10'::date)
+ returning id;
+
+INSERT INTO public.visits (animal_id, vet_id, visit_date) VALUES ('7'::integer, '2'::integer, '2021-04-07'::date)
+ returning id;
+
+INSERT INTO public.visits (animal_id, vet_id, visit_date) VALUES ('8'::integer, '3'::integer, '2019-09-29'::date)
+ returning id;
+
+INSERT INTO public.visits (animal_id, vet_id, visit_date) VALUES ('9'::integer, '4'::integer, '2020-10-03'::date)
+ returning id;
+
+INSERT INTO public.visits (animal_id, vet_id, visit_date) VALUES ('9'::integer, '4'::integer, '2020-11-04'::date)
+ returning id;
+
+INSERT INTO public.visits (animal_id, vet_id, visit_date) VALUES ('10'::integer, '2'::integer, '2019-01-24'::date)
+ returning id;
+
+INSERT INTO public.visits (animal_id, vet_id, visit_date) VALUES ('10'::integer, '2'::integer, '2019-05-15'::date)
+ returning id;
+
+INSERT INTO public.visits (animal_id, vet_id, visit_date) VALUES ('10'::integer, '2'::integer, '2020-02-27'::date)
+ returning id;
+
+INSERT INTO public.visits (animal_id, vet_id, visit_date) VALUES ('10'::integer, '2'::integer, '2020-08-03'::date)
+ returning id;
+
+INSERT INTO public.visits (animal_id, vet_id, visit_date) VALUES ('11'::integer, '3'::integer, '2020-05-24'::date)
+ returning id;
+
+INSERT INTO public.visits (animal_id, vet_id, visit_date) VALUES ('11'::integer, '1'::integer, '2021-01-11'::date)
+ returning id;
